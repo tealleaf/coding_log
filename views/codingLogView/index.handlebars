@@ -1,0 +1,17 @@
+{{#each timeCoded}}
+  <div class="card card-body mb-2">
+    <h4>Date:</h4>
+    <p>{{date}}</p>
+    <h4>Goal:</h4>
+    <p>{{goal}}</p>
+    <h4>Time:</h4>
+    <p>{{timeCoded}}</p>
+    <a class="btn btn-dark btn-block mb-2" href="/timeCoded/edit/{{id}}">Edit</a>
+    <form method="post" action="/timeCoded/{{id}}?_method=DELETE">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" class="btn btn-danger btn-block" value="Delete">
+    </form>
+  </div>
+{{else}}
+  <p>Nothing here yet.</p>
+{{/each}}

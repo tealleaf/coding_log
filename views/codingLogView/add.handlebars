@@ -1,0 +1,22 @@
+{{#each errors}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+<div class="card card-body">
+  <h3>Coding Log</h3>
+  <form action="/timeCoded" method="post"> {{!-- I wonder how it knows to go into the route folder --}}
+    <div class="form-group">
+      <label for="goal">Goal</label>
+      <input type="text" class="form-control" name="goal" required></input>
+    </div>
+
+    <div class="form-group">
+      <label for="timeCoded">Time Coded (enter in minutes)</label>
+      <input type="text" class="form-control" name="timeCoded" onkeypress="return isNumberKey(event)" required>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

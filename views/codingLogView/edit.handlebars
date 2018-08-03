@@ -1,0 +1,21 @@
+{{#each errors}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+<div class="card card-body">
+  <h3>Coding Log</h3>
+  <form action="/timeCoded/{{timeCoded.id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="form-group">
+      <label for="goal">Goal</label>
+      <input type="text" class="form-control" name="goal" value="{{timeCoded.goal}}" required>
+    </div>
+    <div class="form-group">
+      <label for="details">Time Coded (minutes)</label>
+      <input type="text" class="form-control" name="timeCoded" onkeypress="return isNumberKey(event)" value="{{timeCoded.timeCoded}}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
